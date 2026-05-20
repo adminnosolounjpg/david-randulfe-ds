@@ -95,6 +95,8 @@ Al crear un design system para David Randulfe:
 - **Jerarquía visual obligatoria.**
 - **Brand puro `#3430D2` → contenido siempre blanco.** Mid `#A8A8E5` → texto oscuro (contraste insuficiente con blanco sobre fondo claro).
 - **Sin elementos místicos** (estrellas, italics decorativos). El feel es tech, no espiritual.
+- **NUNCA usar eyebrow/kicker/texto sobre los headlines**. Los títulos abren la slide sin texto encima — la diapositiva empieza directamente por el h1. Composición limpia.
+- **Peso del h1: 700** (no 800). Presencia sin machacar.
 
 ## Mantenimiento
 
