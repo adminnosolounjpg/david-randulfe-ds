@@ -98,6 +98,36 @@ Al crear un design system para David Randulfe:
 - **NUNCA usar eyebrow/kicker/texto sobre los headlines**. Los títulos abren la slide sin texto encima — la diapositiva empieza directamente por el h1. Composición limpia.
 - **Peso del h1: 700** (no 800). Presencia sin machacar.
 
+## Imágenes con Unsplash
+
+Cuando una presentación necesite fotografía (hero, testimonios, slides emocionales) y no tengamos foto propia, usa Unsplash. El sistema soporta dos modos:
+
+**Modo 1 — Sin API key (default, out-of-the-box):**
+
+```html
+<img src="https://source.unsplash.com/1600x900/?KEYWORD1,KEYWORD2"
+     alt="Descripción"
+     style="width:100%; height:100%; object-fit:cover;">
+```
+
+Devuelve una foto aleatoria que matchea las keywords. Sin registro, sin key.
+
+**Modo 2 — Con API key (cuando el cliente tenga su `UNSPLASH_ACCESS_KEY`):**
+
+```
+GET https://api.unsplash.com/photos/random?query=KEYWORD&orientation=landscape
+Headers: Authorization: Client-ID {access_key}
+```
+
+**Keywords sugeridos para David Randulfe** (performance marketing, escalado, tech business):
+
+- Hero: `entrepreneur,laptop,confident`, `business,dashboard`, `data,growth`
+- Testimonio: `portrait,business,professional`, `man,suit,smile`
+- Métricas/sistema: `dashboard,analytics`, `data,chart`, `automation,tech`
+- Escalado: `arrow,up,growth`, `infinity,scale`, `mountain,peak`
+
+**No usar:** fotos cliché motivacionales tipo high-five, gente saltando en oficina, manos chocando. David vende criterio y sistemas, no hype. Preferir composiciones con presencia y solidez (laptops, dashboards, retratos profesionales).
+
 ## Mantenimiento
 
 - **Source of truth:** este repo. Cualquier cambio se commitea aquí.
