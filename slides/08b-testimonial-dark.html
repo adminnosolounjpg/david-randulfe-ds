@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>David Randulfe — Testimonial dark horizontal</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    .slide-bg {
+      background-image: url('../assets/bg/fondos-10.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Slide wrapper centrado */
+    .td-slide {
+      height: 100%;
+      padding: 120px 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Card dark horizontal — foto izquierda + quote derecha */
+    .td-card {
+      background: var(--iw-dark);
+      border-radius: 36px;
+      padding: 64px 80px;
+      max-width: 1480px;
+      width: 100%;
+      position: relative;
+      color: var(--iw-on-dark);
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* Foto cuadrada rounded (izquierda) */
+    .td-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .td-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Columna derecha — quote + autor */
+    .td-content {
+      position: relative;
+    }
+
+    /* Quote */
+    .td-quote {
+      font-family: var(--iw-font);
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.5;
+      color: var(--iw-on-dark);
+      margin: 0 0 36px 0;
+    }
+    .td-quote strong {
+      font-weight: 700;
+    }
+
+    /* Nombre + cargo */
+    .td-name {
+      font-family: var(--iw-font);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      color: var(--iw-on-dark);
+      margin: 0 0 4px 0;
+    }
+    .td-role {
+      font-family: var(--iw-font);
+      font-weight: 400;
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.55);
+      margin: 0;
+    }
+
+    /* Comilla decorativa light en esquina inferior derecha (contraste sobre navy) */
+    .td-quote-decor {
+      position: absolute;
+      bottom: -16px;
+      right: 0;
+      width: 56px;
+      height: 42px;
+      color: var(--iw-light);
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+<div class="iw-stage">
+  <section class="iw-slide slide-bg">
+
+    <div class="td-slide">
+      <article class="td-card">
+
+        <!-- Foto cuadrada izquierda -->
+        <div class="td-photo">
+          <!-- Reemplazar con: <img src="ruta-foto.jpg" alt="Borja Vilaseca"> -->
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="td-content">
+
+          <p class="td-quote">
+            David es un genio del marketing. Y una bellísima persona. <strong>Si sigues sus sabios consejos tu proyecto empresarial crecerá</strong> de formas que ahora mismo no eres capaz de imaginar.
+          </p>
+
+          <h3 class="td-name">Borja Vilaseca</h3>
+          <p class="td-role">Kuestiona</p>
+
+          <!-- Comilla decorativa cobalto invertida -->
+          <svg class="td-quote-decor" viewBox="0 0 32 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 24V12C0 5.4 5.4 0 12 0V6C8.7 6 6 8.7 6 12H12V24H0ZM18 24V12C18 5.4 23.4 0 30 0V6C26.7 6 24 8.7 24 12H30V24H18Z"/>
+          </svg>
+
+        </div>
+
+      </article>
+    </div>
+
+  </section>
+</div>
+</body>
+</html>
