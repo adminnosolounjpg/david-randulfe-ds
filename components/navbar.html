@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>David Randulfe — Navbar</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    /* ─────────────────  NAVBAR (David Randulfe)  ─────────────────
+       Coherente con web real de David:
+       - Logo izquierda (lockup wordmark randulfe-34.png)
+       - Links centro (Sobre mí, Trabaja conmigo, Vídeos) — case normal
+       - Acceder link + EMPEZAR pill cobalto derecha
+       - Sticky, background blanco
+    */
+
+    .iw-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FFFFFF;
+      padding: 18px 64px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 56px;
+      align-items: center;
+      box-shadow: 0 1px 0 rgba(19, 29, 45, 0.06);
+    }
+
+    .iw-navbar__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--iw-font);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--iw-dark);
+      text-decoration: none;
+    }
+    .iw-navbar__logo img { height: 40px; width: auto; display: block; }
+
+    .iw-navbar__links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+    }
+    /* Links case normal (David usa Sentence case, no uppercase) */
+    .iw-navbar__links a {
+      font-family: var(--iw-font);
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--iw-dark);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .iw-navbar__links a:hover { color: var(--iw-primary); }
+    .iw-navbar__links a.is-active { color: var(--iw-primary); }
+
+    .iw-navbar__actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .iw-navbar__acceder {
+      font-family: var(--iw-font);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--iw-dark);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .iw-navbar__acceder:hover { color: var(--iw-primary); }
+
+    .iw-navbar__cta {
+      display: inline-flex;
+      align-items: center;
+      background: var(--iw-primary);
+      color: var(--iw-on-dark);
+      font-family: var(--iw-font);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .iw-navbar__cta:hover { background: var(--iw-primary-hover); }
+
+    /* Mobile: hamburger (representativo) */
+    .iw-navbar__hamburger {
+      display: none;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .iw-navbar { grid-template-columns: auto 1fr auto; padding: 14px 24px; }
+      .iw-navbar__links { display: none; }
+      .iw-navbar__hamburger { display: block; }
+    }
+
+    /* ─────────────────  Preview  ───────────────── */
+    body {
+      margin: 0;
+      background: #FAFAFA;
+      font-family: var(--iw-font);
+    }
+    .specimen-pad { padding: 60px; }
+    .specimen-pad h2 {
+      font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--iw-ink-muted); margin: 0 0 24px 0; font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar real -->
+  <nav class="iw-navbar">
+    <a href="#" class="iw-navbar__logo">
+      <img src="../assets/logos/randulfe-34.png" alt="David Randulfe">
+    </a>
+
+    <ul class="iw-navbar__links">
+      <li><a href="#" class="is-active">Sobre mí</a></li>
+      <li><a href="#">Trabaja conmigo</a></li>
+      <li><a href="#">Vídeos</a></li>
+    </ul>
+
+    <div class="iw-navbar__actions">
+      <a href="#" class="iw-navbar__acceder">Acceder</a>
+      <a href="#" class="iw-navbar__cta">Empezar</a>
+    </div>
+  </nav>
+
+  <div class="specimen-pad">
+    <h2>Navbar — Notas de uso (David Randulfe)</h2>
+    <p style="max-width: 700px; color: var(--iw-ink-soft); line-height: 1.6;">
+      Sticky, background blanco, shadow muy sutil. Logo a la izquierda (lockup randulfe-34.png).
+      3 links principales en centro (Sentence case, peso 500): Sobre mí, Trabaja conmigo, Vídeos.
+      A la derecha: "Acceder" link + "Empezar" pill cobalto brand.
+      En mobile (&lt;900px) los links se ocultan y aparece hamburger.
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>David Randulfe — Cards</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    /* ─────────────────  CARDS  ─────────────────
+       Variantes coherentes con web real:
+       - Card light (sobre fondo claro)
+       - Card light con icono circular brand
+       - Card con media (foto arriba)
+       - Card dark (sobre navy)
+       - Card lavanda (background light brand)
+    */
+
+    .iw-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--iw-shadow-md);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .iw-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--iw-shadow-lg);
+    }
+    .iw-card__title {
+      font-family: var(--iw-font);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--iw-dark);
+      margin: 0 0 12px 0;
+      line-height: 1.25;
+    }
+    .iw-card__desc {
+      font-family: var(--iw-font);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--iw-ink-soft);
+      margin: 0;
+    }
+    .iw-card__desc strong { color: var(--iw-dark); font-weight: 700; }
+
+    /* Icono circular brand arriba */
+    .iw-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--iw-light);
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      color: var(--iw-primary);
+    }
+    .iw-card__icon svg { width: 28px; height: 28px; }
+
+    /* Variante: card lavanda (background light brand al 50%) */
+    .iw-card--lavender {
+      background: rgba(215, 228, 255, 0.45);
+      box-shadow: none;
+    }
+    .iw-card--lavender:hover { box-shadow: var(--iw-shadow-md); }
+
+    /* Variante: card dark */
+    .iw-card--dark {
+      background: var(--iw-dark);
+      color: var(--iw-on-dark);
+    }
+    .iw-card--dark .iw-card__title { color: var(--iw-on-dark); }
+    .iw-card--dark .iw-card__desc { color: rgba(255, 255, 255, 0.7); }
+    .iw-card--dark .iw-card__icon {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+    }
+
+    /* Variante: card con media arriba */
+    .iw-card--media {
+      padding: 0;
+      overflow: hidden;
+    }
+    .iw-card__media {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--iw-light);
+      overflow: hidden;
+    }
+    .iw-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .iw-card--media .iw-card__body { padding: 28px 32px 32px; }
+
+    /* Numbered badge dark (visto en method-3steps) */
+    .iw-card__badge {
+      display: inline-grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--iw-dark);
+      color: var(--iw-on-dark);
+      font-family: var(--iw-font);
+      font-weight: 800;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* ─────────────────  Preview  ───────────────── */
+    body {
+      padding: 60px;
+      background: #FAFAFA;
+      font-family: var(--iw-font);
+    }
+    .specimen-section { margin-bottom: 64px; }
+    .specimen-section h2 {
+      font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--iw-ink-muted); margin: 0 0 24px 0; font-weight: 700;
+    }
+    .specimen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="specimen-section">
+    <h2>Card light con icono</h2>
+    <div class="specimen-grid">
+      <article class="iw-card">
+        <div class="iw-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <h3 class="iw-card__title">Vendes 24/7</h3>
+        <p class="iw-card__desc">Sistema automatizado que <strong>genera ventas todos los días</strong> sin contar tu vida en redes.</p>
+      </article>
+
+      <article class="iw-card">
+        <div class="iw-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3 class="iw-card__title">Escalas con criterio</h3>
+        <p class="iw-card__desc">Métricas claras para <strong>escalar a +1M€ anuales</strong> sin perder margen.</p>
+      </article>
+
+      <article class="iw-card">
+        <div class="iw-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3 class="iw-card__title">Equipo autónomo</h3>
+        <p class="iw-card__desc">Procesos que <strong>delegan la operativa</strong> y te liberan tiempo para dirigir.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="specimen-section">
+    <h2>Card lavanda (background light brand)</h2>
+    <div class="specimen-grid">
+      <article class="iw-card iw-card--lavender">
+        <h3 class="iw-card__title">Sin contar tu vida</h3>
+        <p class="iw-card__desc">No dependes de redes sociales para generar clientes.</p>
+      </article>
+      <article class="iw-card iw-card--lavender">
+        <h3 class="iw-card__title">Sin sacrificar margen</h3>
+        <p class="iw-card__desc">Escalas facturación manteniendo el beneficio operativo.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="specimen-section">
+    <h2>Card dark (sobre navy)</h2>
+    <div class="specimen-grid">
+      <article class="iw-card iw-card--dark">
+        <div class="iw-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/>
+            <path d="M7 12l4-4 4 4 6-6"/>
+          </svg>
+        </div>
+        <h3 class="iw-card__title">Sistema que escala 24/7</h3>
+        <p class="iw-card__desc">Vende automáticamente mientras tú diriges la estrategia.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="specimen-section">
+    <h2>Card con badge numerado</h2>
+    <div class="specimen-grid">
+      <article class="iw-card">
+        <div class="iw-card__badge">1</div>
+        <h3 class="iw-card__title">Auditamos tu funnel</h3>
+        <p class="iw-card__desc">Detectamos dónde se cae el sistema y qué palancas mover primero.</p>
+      </article>
+      <article class="iw-card">
+        <div class="iw-card__badge">2</div>
+        <h3 class="iw-card__title">Automatizamos las ventas</h3>
+        <p class="iw-card__desc">IA + procesos + publicidad omnicanal para vender todos los días.</p>
+      </article>
+      <article class="iw-card">
+        <div class="iw-card__badge">3</div>
+        <h3 class="iw-card__title">Escalamos con criterio</h3>
+        <p class="iw-card__desc">Equipo, métricas y oferta para superar el millón sin perder margen.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="specimen-section">
+    <h2>Card con media (foto arriba)</h2>
+    <div class="specimen-grid">
+      <article class="iw-card iw-card--media">
+        <div class="iw-card__media">
+          <!-- Reemplazar con: <img src="ruta-foto.jpg" alt="Caso de éxito"> -->
+        </div>
+        <div class="iw-card__body">
+          <h3 class="iw-card__title">Borja Vilaseca · Kuestiona</h3>
+          <p class="iw-card__desc">"David es un genio del marketing. <strong>Si sigues sus consejos tu proyecto crecerá</strong> de formas que ahora no eres capaz de imaginar."</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>
